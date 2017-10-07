@@ -1,9 +1,9 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
-import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
-import { red, orange, blue, lightPurp, pink, white } from './colors'
+import {View, StyleSheet} from 'react-native'
+import {FontAwesome, MaterialIcons, MaterialCommunityIcons} from '@expo/vector-icons'
+import {red, orange, blue, lightPurp, pink, white} from './colors'
 
-export function getDailyReminderValue () {
+export function getDailyReminderValue() {
     return {
         today: "👋 Don't forget to log your data today!"
     }
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     },
 })
 
-export function getMetricMetaInfo (metric) {
+export function getMetricMetaInfo(metric) {
     const info = {
         run: {
             displayName: 'Run',
@@ -121,7 +121,7 @@ export function getMetricMetaInfo (metric) {
 }
 
 
-export function isBetween (num, x, y) {
+export function isBetween(num, x, y) {
     if (num >= x && num <= y) {
         return true
     }
@@ -129,7 +129,7 @@ export function isBetween (num, x, y) {
     return false
 }
 
-export function calculateDirection (heading) {
+export function calculateDirection(heading) {
     let direction = ''
 
     if (isBetween(heading, 0, 22.5)) {
@@ -157,7 +157,7 @@ export function calculateDirection (heading) {
     return direction
 }
 
-export function timeToString (time = Date.now()) {
+export function timeToString(time = Date.now()) {
     const date = new Date(time)
     const todayUTC = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
     return todayUTC.toISOString().split('T')[0]
